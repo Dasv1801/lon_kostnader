@@ -1,0 +1,42 @@
+# steg 0 - import
+import time
+from colorama import Fore
+
+# Steg 1 - Beräkna nettolön efter fasta kostnader och skatt
+print("\n")
+time.sleep(1)
+nettolon = float(input("Vilken månadslön fick du denna månad? "))
+time.sleep(1)
+print("\n")
+print("Nettolön = ", nettolon)
+
+# Steg 1 - listan för alla utgifter
+hyra = 2000
+sl_kort = 650
+mobilrakning = 225
+a_kassa = 140
+csn = 669
+spotify = 109
+kyrkoavgift = nettolon * 0.01
+semesterersattning = nettolon * 0.12 
+resultat_kostnader = hyra + sl_kort + mobilrakning + a_kassa + csn + kyrkoavgift + semesterersattning + spotify
+
+# Steg 2 - Printa listan med alla utgifter
+time.sleep(1)
+print("\n")
+
+print("Semesterersättning (12%): ", semesterersattning)
+print("Kyrkoavgift (1%): ", kyrkoavgift)
+print("Hyra:", hyra)
+print("Sl kort:", sl_kort)
+print("A-kassan:", a_kassa)
+print("CSN:", csn)
+print ("Spotify: ", spotify)
+
+resultat = nettolon - resultat_kostnader
+print("\n")
+print("Lön efter kostnader är lika med: ", resultat)
+
+# Steg 3 - Minus 12000 kr för att se vad som blir kvar att spara. 
+lon_efter_12k = resultat - 12000
+print ("Lönen efter -12 000: ", lon_efter_12k)
