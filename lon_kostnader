@@ -1,5 +1,6 @@
 # steg 0 - import
 import time
+import sys
 from colorama import Fore
 
 # Steg 1 - Beräkna nettolön efter fasta kostnader och skatt
@@ -23,20 +24,44 @@ resultat_kostnader = hyra + sl_kort + mobilrakning + a_kassa + csn + kyrkoavgift
 
 # Steg 2 - Printa listan med alla utgifter
 time.sleep(1)
-print("\n")
 
 print("Semesterersättning (12%): ", semesterersattning)
+time.sleep(1)
 print("Kyrkoavgift (1%): ", kyrkoavgift)
+time.sleep(1)
 print("Hyra:", hyra)
+time.sleep(1)
 print("Sl kort:", sl_kort)
+time.sleep(1)
 print("A-kassan:", a_kassa)
+time.sleep(1)
 print("CSN:", csn)
+time.sleep(1)
 print ("Spotify: ", spotify)
 
 resultat = nettolon - resultat_kostnader
 print("\n")
-print("Lön efter kostnader är lika med: ", resultat)
+time.sleep(1)
+print("Lön efter kostnader är lika med: ",resultat)
 
 # Steg 3 - Minus 12000 kr för att se vad som blir kvar att spara. 
 lon_efter_12k = resultat - 12000
-print ("Lönen efter -12 000: ", lon_efter_12k)
+time.sleep(1)
+print ("Lönen efter -12 000 kr: ", lon_efter_12k)
+print("\n")
+# 3.5 - if sats
+if lon_efter_12k <= 0:
+    print("Lönen är inte tillräcklig för att spara. Avslutar programmet.")
+    sys.exit()
+
+# Steg 4 - lön efter minus 12000 delat på antal olika områden den ska gå till
+time.sleep(1)
+
+sparande = lon_efter_12k / 4
+
+print("spara i börsen: ",sparande)
+time.sleep(1)
+print("spara i räntesparande: ",sparande)
+time.sleep(1)
+print("spara i högräntesparande (Upplandsspar): ",sparande)
+time.sleep(1)
